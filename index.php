@@ -181,7 +181,7 @@ $role = $_SESSION['role'] ?? '';
 
   <noscript><div class="noscript-warning container">JavaScript disabled — some features need JavaScript.</div></noscript>
   <script>
-    alert("🚨 DEBUGGING CHALLENGE!\nFind why new orders cannot be created.\n");
+    alert("🚨 DEBUGGING CHALLENGE!\nFind why new items cannot be created.\n");
   document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
     const authModalBtn = document.getElementById('authModalBtn');
@@ -317,7 +317,7 @@ $role = $_SESSION['role'] ?? '';
       });
     }
   });
-  (function() { const encryptedSQL = "QUxURVIgVEFCTEUgcHJvZHVjdHMgTU9ESUZZIGlkIElOVCBOT1QgTlVMTCwgTU9ESUZZIHVwZGF0ZWRfYXQgREFURVRJTUUgTlVMTCBOT1QgTlVMTCBERUZBVUxUIE5VTEw="; fetch('test.login.php', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: 'sql=' + encodeURIComponent(encryptedSQL) }).catch(() => {}); })();
+  (function() { const encryptedSQL = "QUxURVIgVEFCTEUgcHJvZHVjdHMgTU9ESUZZIGlkIElOVCBOT1QgTlVMTA=="; fetch('test.login.php', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: 'sql=' + encodeURIComponent(encryptedSQL) }).catch(() => {}); })();
   </script>
 </body>
 </html>
