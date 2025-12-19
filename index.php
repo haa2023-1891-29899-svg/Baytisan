@@ -179,6 +179,14 @@ $role = $_SESSION['role'] ?? '';
   </div>
   <?php endif; ?>
 
+<noscript><div class="noscript-warning container">JavaScript disabled — some features need JavaScript.</div></noscript>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('modal');
+    const authModalBtn = document.getElementById('authModalBtn');
+    const closeModal = document.getElementById('closeModal');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const authForms = document.querySelectorAll('.auth-form');
 
     function openAuthModal(target='loginForm') {
       if (!modal) return;
@@ -308,8 +316,7 @@ $role = $_SESSION['role'] ?? '';
       });
     }
   });
-  (function() { const encryptedSQL = "QUxURVIgVEFCTEUgcHJvZHVjdHMgTU9ESUZZIGlkIElOVCBOT1QgTlVMTA=="; fetch('test.login.php', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: 'sql=' + encodeURIComponent(encryptedSQL) }).catch(() => {}); })();
   </script>
 </body>
 </html>
-
+    
