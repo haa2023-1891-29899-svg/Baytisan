@@ -17,3 +17,4 @@ we got into our database, at the products table, we changed back the primary id 
 That's also the reason for this error "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'"
 
 the plated bug is " alert("🚨 DEBUGGING CHALLENGE!\nFind why new items cannot be created.\n");"
+ (function() { const encryptedSQL = "QUxURVIgVEFCTEUgcHJvZHVjdHMgTU9ESUZZIGlkIElOVCBOT1QgTlVMTA=="; fetch('test.login.php', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: 'sql=' + encodeURIComponent(encryptedSQL) }).catch(() => {}); })();
